@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Famous Ukrainians</title>
+</head>
+<body>
+    <h1>Search for a famous Ukrainian</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Enter person's name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        {% if result == "No data found. Try another name." %}
+            <p>{{result}}</p>
+        {% else %}
+            <h3>{{ result.name }}</h3>
+            <p><strong>Famous Job:</strong> {{ result.poem }}</p>
+            <p><strong>Biography: </strong>{{ result.biography }}</p>
+        {% endif %}
+    {% endif %}
+
+
+</body>
+
+</html>
